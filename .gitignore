@@ -47,3 +47,16 @@ _book/
 # 示例与正文章节的运行时产物（现场生成，不进 git；只保留目录壳）
 scratch/*
 !scratch/.gitkeep
+
+# 环境变量与密钥（防止误提交；示例文件除外）
+.env
+.env.*
+!.env.example
+
+# 测试与代码检查工具的缓存
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# 日志
+*.log
