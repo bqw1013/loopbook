@@ -1,0 +1,43 @@
+[project]
+name = "loopbook"
+version = "0.1.0"
+description = "面向中文技术书与教材的图书骨架：学习理论、AI 代笔硬规范与三产物构建链"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "Author", email = "author@example.com" },
+]
+
+# 运行依赖：按你这本书的示例脚本需要填写。
+# 骨架自带的示例章脚本（examples/01_hash_dedup.py）只用标准库，无需添加。
+dependencies = []
+
+[project.optional-dependencies]
+# 开发依赖：测试与代码检查
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.6.0",
+]
+
+[tool.uv]
+# 为常见平台生成跨平台 lock 文件，方便不同系统的读者复现环境
+environments = [
+    "sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "sys_platform == 'win32'",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[dependency-groups]
+# 文档依赖：MkDocs 站点
+docs = [
+    "mkdocs-material>=9.7.7",
+]

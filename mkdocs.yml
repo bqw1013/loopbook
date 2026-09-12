@@ -1,0 +1,21 @@
+site_name: loopbook 示例书
+site_description: loopbook 图书骨架自带的示例章（开新书时整体替换）
+docs_dir: chapters
+
+theme:
+  name: material
+  language: zh
+  palette:
+    primary: teal
+
+nav:
+  - 首页: index.md
+  - 第一章 · 去重：哈希指纹与重复文件: 01-sample-chapter/index.md
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js

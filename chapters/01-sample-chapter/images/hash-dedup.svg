@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="330" viewBox="0 0 660 330" font-family="sans-serif" font-size="14">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- 文件夹 A -->
+  <rect x="30" y="50" width="190" height="170" rx="6" fill="#eef6f6" stroke="#0f766e" stroke-width="1.5"/>
+  <text x="125" y="78" text-anchor="middle" font-weight="bold">inbox-a</text>
+  <text x="55" y="112">cat.jpg</text>
+  <text x="55" y="146">notes.txt</text>
+  <text x="55" y="180">（共 2 个文件）</text>
+
+  <!-- 文件夹 B -->
+  <rect x="440" y="50" width="190" height="170" rx="6" fill="#eef6f6" stroke="#0f766e" stroke-width="1.5"/>
+  <text x="535" y="78" text-anchor="middle" font-weight="bold">inbox-b</text>
+  <text x="465" y="112">cat-副本.jpg</text>
+  <text x="465" y="146">notes.txt</text>
+  <text x="465" y="180">dog.jpg</text>
+
+  <!-- 哈希节点 -->
+  <rect x="272" y="92" width="116" height="60" rx="10" fill="#0f766e"/>
+  <text x="330" y="128" text-anchor="middle" fill="#ffffff">哈希指纹</text>
+
+  <!-- 汇入箭头 -->
+  <line x1="220" y1="135" x2="270" y2="124" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="440" y1="135" x2="390" y2="124" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 结果分组 -->
+  <line x1="310" y1="152" x2="200" y2="246" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="350" y1="152" x2="460" y2="246" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="90" y="248" width="220" height="56" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="1.5"/>
+  <text x="200" y="281" text-anchor="middle">指纹相同 → 同组（重复）</text>
+
+  <rect x="350" y="248" width="220" height="56" rx="6" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+  <text x="460" y="281" text-anchor="middle">指纹各异 → 各自成组</text>
+
+  <text x="330" y="325" text-anchor="middle" fill="#64748b" font-size="13">比较的是内容，不是文件名</text>
+</svg>
