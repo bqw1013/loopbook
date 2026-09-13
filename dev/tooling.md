@@ -23,7 +23,7 @@
 |------|------|-------------|
 | 同步环境（运行依赖） | `uv sync` | `.venv/` |
 | 同步环境（含站点工具） | `uv sync --group docs` | `.venv/` |
-| 运行示例 | `uv run python examples/01_hash_dedup.py` | 终端输出 + `scratch/ch1/` |
+| 运行示例 | `uv run python chapters/01-sample-chapter/code/hash_dedup.py` | 终端输出 + `scratch/ch1/` |
 | 预览站点 | `uv run mkdocs serve` | http://127.0.0.1:8000 |
 | 构建站点 | `uv run mkdocs build` | `site/` |
 | 构建 PDF | `bash build_pdf.sh` | `_book/loopbook.pdf` |
@@ -40,12 +40,13 @@ chapters/
   index.md                     # 首页，固定
   01-sample-chapter/           # 示例章（开书时替换）
     index.md                   # 章正文
-    images/hash-dedup.svg
+    images/                    # 本章配图（有图才有此目录）
+    code/                      # 本章完整可执行代码（有代码才有此目录）
 ```
 
 ## 四、新增章节
 
-1. 新建 `chapters/NN-<slug>/index.md`（`NN` 两位序号决定先后），配图放同目录 `images/`；md 里用相对引用 `images/xxx.png` 即可。
+1. 新建 `chapters/NN-<slug>/index.md`（`NN` 两位序号决定先后）。章内资产按种类分目录，**有则建、无则不建**：配图放同目录 `images/`，md 里用相对引用 `images/xxx.png` 即可；完整可执行的整脚本放 `code/`，文件名的唯一性由章目录保证。
 2. 章节顺序由三处决定，**新增章要三处同步追加**，保持一致：
    - `mkdocs.yml` 的 `nav`；
    - `build_pdf.sh` 顶部的 `CHAPTERS=( ... )`；

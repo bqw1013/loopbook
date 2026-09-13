@@ -11,7 +11,7 @@
 | 写作硬规范 | `CLAUDE.md` | 图表题注、代码行宽、缺字符号、文风四条，每章都必须遵守 |
 | 本书约定 | `dev/plan.md` | 创作约定模板：读者画像、整任务章节大纲、进度（开书时先填它） |
 | 构建链 | `build_pdf.sh` `build_epub.sh` `mkdocs.yml` | 一套 Markdown 源，同时产出站点、PDF、EPUB |
-| 样例章 | `chapters/01-sample-chapter/` | 写满的一章，演示微环四拍、题注、AI 接口的完整写法 |
+| 样例章 | `chapters/01-sample-chapter/` | 写满的一章，演示微环四拍、题注、AI 接口的完整写法；正文、配图、代码都在这一目录内 |
 
 ## 环境准备
 
@@ -25,7 +25,7 @@ uv sync --group docs
 uv run mkdocs serve                          # 站点预览
 bash build_pdf.sh                            # _book/loopbook.pdf
 bash build_epub.sh                           # _book/loopbook.epub
-uv run python examples/01_hash_dedup.py      # 示例章配套脚本
+uv run python chapters/01-sample-chapter/code/hash_dedup.py   # 章配套脚本
 ```
 
 ## 用它开一本新书
@@ -44,8 +44,9 @@ uv run python examples/01_hash_dedup.py      # 示例章配套脚本
 ```text
 chapters/            # 站点与电子书的 Markdown 源，一章一个目录
   index.md           #   首页
-  NN-slug/index.md   #   章正文；图放同目录 images/，文件名全书唯一
-examples/            # 章配套脚本，uv run python 直接跑
+  NN-slug/index.md   #   章正文
+  NN-slug/images/    #   本章配图（有图才有；文件名全书唯一）
+  NN-slug/code/      #   本章完整可执行代码（有代码才有）
 scratch/             # 脚本运行时产物（已 gitignore，只保留目录壳）
 data/                # 随书数据（按需填充；大文件走脚本拉取，不进 git）
 dev/                 # 创作资料：design-rationale / plan 模板 / tooling 手册

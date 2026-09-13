@@ -59,7 +59,7 @@
 现在，打开终端执行仓库提供的示例脚本：
 
 ```bash
-uv run python examples/01_hash_dedup.py
+uv run python chapters/01-sample-chapter/code/hash_dedup.py
 ```
 
 终端将打印出如下真实运行结果：

@@ -1,6 +1,6 @@
 """示例章配套脚本：用哈希指纹找出重复文件。
 
-运行：uv run python examples/01_hash_dedup.py
+运行：uv run python chapters/01-sample-chapter/code/hash_dedup.py
 产物：scratch/ch1/ 下的演示文件与 report.txt（已被 .gitignore 忽略）
 """
 
@@ -8,8 +8,8 @@ import hashlib
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-WORK = ROOT / "scratch" / "ch1"
+BOOK = Path(__file__).resolve().parents[3]
+WORK = BOOK / "scratch" / "ch1"
 
 # 文件名叫什么不重要，内容是否相同只有哈希说了算：
 # 两个 cat 名字不同、内容相同；两个 notes.txt 同名、内容不同

@@ -10,7 +10,7 @@ authors = [
 ]
 
 # 运行依赖：按你这本书的示例脚本需要填写。
-# 骨架自带的示例章脚本（examples/01_hash_dedup.py）只用标准库，无需添加。
+# 骨架自带的示例章脚本（chapters/01-sample-chapter/code/hash_dedup.py）只用标准库，无需添加。
 dependencies = []
 
 [project.optional-dependencies]
